@@ -1,0 +1,853 @@
+a{
+    text-decoration: none;
+    color:#656768;
+}
+
+.container{
+    max-width: 1366px; 
+    margin: 0 auto;
+}
+header{
+    width: 100%; 
+    overflow: hidden;
+}
+header nav{
+    width: 100%; height: 82px;
+    text-align: left;
+    overflow: hidden;
+}
+header nav a{
+    overflow: hidden;
+
+}
+header nav .nav1{
+    display: block;
+    width: 230px; height: 82px;
+    background-size: 250px 82px;
+    margin-left: 10px;
+    float: left;
+}
+header nav .nav2{
+    display: block;
+    width: 110px;height:82px ;
+    float: left;
+    transition: all 1.5s;
+    text-align: center;
+    line-height: 82px;
+    overflow: hidden;
+    position: relative;
+}
+header nav .nav2 i{
+    display: block;
+    width: 0px; height: 0px;
+    background: #4e9ed5;
+    transition: all .7s;
+    position: absolute;
+    left:0px;top:-9px;
+}
+header nav .nav2:hover i{
+    width: 100%; height: 2px;
+    top:0px;
+    color:#4e9ed5;
+}
+header nav .nav2:hover{
+    color:#4e9ed5;
+    transition:none;
+}
+header nav .nav2 i{
+    border-top:2px solid #4e9ed5;
+}
+header nav .nav10{
+    display: block;
+    width: 100px; height: 84px; 
+    background: #d4af46;
+    color:#fff;
+    font-size: 18px;
+    float: left;
+    line-height: 94px;
+    text-align: center;
+}
+header nav .nav10 i{
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background:#d4af46 url(../img/xuebi.png) no-repeat -892px -11px;
+    float: left;
+    margin-top: 35px;
+}
+/* TV开始—————————————————————— */
+header .tv-1{
+    width:1280px;
+    height:630px;
+    margin:0; 
+    position:relative;/*给儿子元素定位作为参照物*/
+    overflow:hidden;
+}
+header .tv-1 ul{
+    width:6400px;
+    height:630px;
+    margin:0;
+    padding-inline-start:0;
+    list-style-type:none;
+    position:absolute;/*定位*/
+    top:0px;
+    left:0px;
+    animation:move 26s infinite;
+}
+header .tv-1 ul li{
+    width:1280px;
+    height:630px;
+    float:left;
+}
+header .tv-1 ul .pic-1{
+    background-image:url("../img/lbt1.jpg");
+    background-size:1280px 630px;
+}
+header .tv-1 ul .pic-2{
+    background-image:url("../img/lbt2.jpg");
+    background-size:1280px 630px;
+}
+header .tv-1 ul .pic-3{
+    background-image:url("../img/lbt3.jpg");
+    background-size:1280px 630px;
+}
+header .tv-1 ul .pic-4{
+    background-image:url("../img/lbt4.jpg");
+    background-size:1280px 630px;
+}
+header .tv-1 ul .pic-5{
+    background-image:url("../img/lbt5.jpg");
+    background-size:1280px 630px;
+}
+@keyframes move{
+    0%{
+        left:0;
+    }
+    25%{
+        left:-1280px;
+    }
+    50%{
+        left:-2560px;
+    }
+    75%{
+        left:-3840px;
+    }
+    100%{
+        left:-5120px;
+    }
+}
+header .video{
+    width:1280px;
+    margin: 0 auto;
+}
+header .video ul{
+    width: 1182px;
+    display: flex;/*自动排版*/
+    background: #fff;
+    padding:0 20px 0 20px;
+}
+header .video ul li{
+    width: 550px;
+    overflow: hidden;
+}
+header .video ul .videop{
+    width:525px;
+    margin:40px 0 20px 0;
+    padding-left: 125px;
+}
+header .video ul .videop i{
+    display: inline-block;
+    width: 40px;
+    height: 37px;
+    float: right;
+    background: #fff url(../img/xuebi.png) no-repeat -386px -34px;
+    
+}
+header .video ul .videop .h4{
+    display: block;
+    margin-bottom: 20px;
+    clear: both;
+}
+header .video ul .videop .h4 h4{
+    font-weight: bold;
+    font-size: 14px;
+    text-indent: 2em;
+    color:red;
+}
+header .video ul .videop .p{
+    line-height: 20px;
+    font-size: 12px;
+}
+header .video ul .videop .p p>span{
+    text-decoration:underline;
+    color:#4e9ed5;
+}
+header .video ul .videop .p .hr{
+    width: 100%; height: 1px;
+    border-bottom: 1px solid #ccc;
+    margin-top:20px;
+}
+/* 推荐游戏开始———————————————————————— */
+.container .recommended{
+    width: 100%;
+    margin: 110px auto;
+}
+.container .recommended h1,
+.container .recommended h2{
+    text-align: center;
+}
+.container .recommended h1{
+    font-weight: bold;
+    color:#13222d;
+    font-size: 50px;
+}
+.container .recommended h2{
+    font-size: 12px;
+    color:#a0a6b3;
+    margin-bottom: 50px;
+}
+.container .recommended ul{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    
+}
+.container .recommended ul li{
+    float: left;
+    transition: 2s;
+}
+/* 加入推荐游戏图片—————————————————— */
+.container .recommended ul .game1,
+.container .recommended ul .game2,
+.container .recommended ul .game3,
+.container .recommended ul .game4,
+.container .recommended ul .game5,
+.container .recommended ul .game6,
+.container .recommended ul .game7,
+.container .recommended ul .game8,
+.container .recommended ul .game9{
+    position: relative;/*给子元素定位*/
+    width: 400px; height: 215px;
+    overflow: hidden;
+    margin-top: -1px;
+}
+.container .recommended ul .game1{
+    background: url(../img/pro_tt_normal.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game2{
+    background: url(../img/pro_lw_hover_v5.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game3{
+    background: url(../img/pro_yz_normal.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game4{
+    background: url(../img/proywzv2.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game5{
+    background: url(../img/pronormal.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game6{
+    background: url(../img/pro_ws_normal_v3.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game7{
+    background: url(../img/pro_yz3d_hover_v3.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game8{
+    background: url(../img/pro_lwsy_normal.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game9{
+    background: url(../img/more_game_tps.jpg) no-repeat;
+    background-size: 405px 215px;    
+}
+/* 加入推荐图片！！{hover}！！效果—————————— */
+.container .recommended ul .game1,
+/* .container .recommended ul .game2, */
+.container .recommended ul .game3,
+.container .recommended ul .game4,
+.container .recommended ul .game5,
+.container .recommended ul .game6,
+.container .recommended ul .game7,
+.container .recommended ul .game8:hover{
+    width: 400px; height: 215px;
+    cursor: pointer;/*鼠标经过的小手 */
+    overflow: hidden;
+}
+/* 切换  hover 后的背景图片———————————————— */
+.container .recommended ul .game1:hover{
+    background: url(../img/pro_tt_hover.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game2:hover{
+    /* background: url(../img/pro_tt_hover.jpg) no-repeat; */
+    background-size: 405px 215px;
+}
+.container .recommended ul .game3:hover{
+    background: url(../img/pro_yz_hover.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game4:hover{
+    background: url(../img/pro_ywz_hover_v2.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game5:hover{
+    background: url(../img/pro_bbcs_hover.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game6:hover{
+    background: url(../img/pro_ws_hover_v3.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+.container .recommended ul .game7:hover{
+    /* background: url(../img/pro_tt_hover.jpg) no-repeat; */
+    background-size: 405px 215px;
+}
+.container .recommended ul .game8:hover{
+    background: url(../img/pro_lwsy_hover.jpg) no-repeat;
+    background-size: 405px 215px;
+}
+
+.container .recommended ul .yincang{
+    width: 362px; height: 45px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 20px;
+    text-align: left;
+    position: absolute;
+    left: 0; bottom: -85px;
+    transition:all 1s;
+    border-left: 3px solid #d4af46;
+}
+.container .recommended ul .game1:hover .yincang,
+/* .container .recommended ul .game2:hover .yincang, */
+.container .recommended ul .game3:hover .yincang,
+.container .recommended ul .game4:hover .yincang,
+.container .recommended ul .game5:hover .yincang,
+.container .recommended ul .game6:hover .yincang,
+.container .recommended ul .game7:hover .yincang,
+.container .recommended ul .game8:hover .yincang{
+    bottom: 0px;  
+}
+
+
+.container .recommended ul .game2 .yincang,
+.container .recommended ul .game7 .yincang{
+    /* position: absolute; */
+    bottom: 0px;
+}
+
+
+
+
+.container .recommended ul .game1 i,
+.container .recommended ul .game2 i,
+.container .recommended ul .game3 i,
+.container .recommended ul .game4 i,
+.container .recommended ul .game5 i,
+.container .recommended ul .game6 i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url(../img/xuebi.png) no-repeat -923px -7px;
+    margin-right: 6px;
+}
+.container .recommended ul .game7 i,
+.container .recommended ul .game8 i{
+    display: inline-block;
+    width: 26px;
+    height: 30px;
+    float: left;
+    background: url(../img/xuebi.png) no-repeat -949px -7px;
+    margin-right: 8px;
+}
+
+.container .recommended ul .yincang p{
+    font-size: 18px;
+    color:#d4af46;
+}
+.container .recommended ul .yincang h2{
+    display: inline;
+    font-size: 12px;
+}
+
+.container .recommended ul .yincang a{
+    width: 75px; height: 35px;
+    display: block;
+    text-align: right;
+    float: right;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    line-height: 35px;
+    padding-right: 15px;
+    margin-top: -20px;
+    border-radius: 5px;
+    color:#ccc;
+}
+/* 游戏列表开始———————————————— */
+.container .gamelist{
+    width: 100%;
+    height: 730px;
+    background: #f5f5f5;
+    margin:0 auto;
+    overflow: hidden;
+}
+.container .gamelist h1,
+.container .gamelist h2{
+    text-align: center;
+}
+.container .gamelist h1{
+    font-weight: bold;
+    color:#13222d;
+    font-size: 50px;
+    padding-top: 90px;
+}
+.container .gamelist h2{
+    font-size: 12px;
+    color:#a0a6b3;
+    margin-bottom: 50px;
+}
+.container .list_content{
+    width: 100%;
+    overflow: hidden;
+    margin:0 auto;
+    border-bottom: 1px solid #ccc;
+}
+/* 列表左边—————————————————————————— */
+.container .list_l{
+    width: 800px;
+    height: 600px;
+    float: left;
+    margin-left: 10px;
+    border: 1px solid #ccc; 
+    border-top:none;
+    border-right:none;
+    overflow: hidden;
+}
+
+.container .list_l i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url(../img/xuebi.png) no-repeat -923px -7px;
+    margin:8px 2px 0 10px;
+    
+}
+
+.container .list_l div{
+    width: 778px;
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    background: #e8e9e9;
+}
+.container .list_content .list_l ul{
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    overflow: hidden;
+    border: none;
+    background: #f5f5f5;
+}
+.container .list_content .list_l ul li{
+    width: 292px;
+    height: 54px;
+    float: left;
+    margin:10px 10px 10px 10px;
+    overflow: hidden;
+    border-radius: 10px 10px;
+    padding: 38px 34px;
+}
+.container .list_content .list_l ul li h4{
+    font-size: 30px;
+    color:#13222d;
+    font-weight: bold;
+}
+.container .list_content .list_l ul li p{
+    font-size: 12px;
+    color:#ccc;
+}
+/* 列表游戏里的图片———————————————— */
+.container .list_content .list_l ul .list1{
+    background: url(../img/tt_game_min.jpg) no-repeat;
+    background-size: 360px 132px;
+    overflow: hidden;
+}
+.container .list_content .list_l ul .list2{
+    background: url(../img/ws_game_min_v3.jpg) no-repeat;
+    background-size: 360px 132px;
+    overflow: hidden;
+}
+.container .list_content .list_l ul .list3{
+    background: url(../img/ywz_game_min_v2.jpg) no-repeat;
+    background-size: 360px 132px;
+    overflow: hidden;
+}
+.container .list_content .list_l ul .list4{
+    background: url(../img/bbcs_game_min.jpg) no-repeat;
+    background-size: 360px 132px;
+    overflow: hidden;
+}
+.container .list_content .list_l ul .list5{
+    background: url(../img/yz_game_min.jpg) no-repeat;
+    background-size: 360px 132px;
+    overflow: hidden;
+}
+.container .list_content .list_l ul .list6{
+    background: url(../img/lw_game_min_v5.jpg) no-repeat;
+    background-size: 360px 132px;
+    overflow: hidden;
+}
+/* 图片里的框———————————————————————— */
+.container .list_content .list_l ul .list1 .list1_left,
+.container .list_content .list_l ul .list2 .list2_left,
+.container .list_content .list_l ul .list3 .list3_left,
+.container .list_content .list_l ul .list4 .list4_left,
+.container .list_content .list_l ul .list5 .list5_left,
+.container .list_content .list_l ul .list6 .list6_left{
+    width: 237px;
+    height: 136px;
+    float: left;
+    border-radius:10px 0 0 10px;
+    padding-left: 0;
+    transform:translateX(-240px); /*向左平移*/
+    transition:1s;
+    border: none; 
+    position: relative;
+    bottom: 93px;
+    left: -33px;   
+}
+/* hover效果———————————————————————— */
+.container .list_content .list_l ul .list1:hover .list1_left,
+.container .list_content .list_l ul .list2:hover .list2_left,
+.container .list_content .list_l ul .list3:hover .list3_left,
+.container .list_content .list_l ul .list4:hover .list4_left,
+.container .list_content .list_l ul .list5:hover .list5_left,
+.container .list_content .list_l ul .list6:hover .list6_left{
+    transform:translateX(0px); /*向左平移*/
+}
+/* 框里左left图片—————————————— */
+.container .list_content .list_l ul .list1 .list1_left{
+    background: url(../img/tt.jpg) no-repeat;
+    background-size: 240px 130px;
+}
+.container .list_content .list_l ul .list2 .list2_left{
+    background: url(../img/ws.jpg) no-repeat;
+    background-size: 240px 130px;
+}
+.container .list_content .list_l ul .list3 .list3_left{
+    background: url(../img/ywz2.png) no-repeat;
+    background-size: 240px 130px;
+}
+.container .list_content .list_l ul .list4 .list4_left{
+    background: url(../img/bbcs2.png) no-repeat;
+    background-size: 240px 130px;
+}
+.container .list_content .list_l ul .list5 .list5_left{
+    background: url(../img/yz2.png) no-repeat;
+    background-size: 240px 130px;
+}
+.container .list_content .list_l ul .list6 .list6_left{
+    background: url(../img/lw2.png) no-repeat;
+    background-size: 240px 130px;
+}
+/* 右边———————————————————————— */
+
+.container .list_content .list_l ul .list1 .list1_right,
+.container .list_content .list_l ul .list2 .list2_right,
+.container .list_content .list_l ul .list3 .list3_right,
+.container .list_content .list_l ul .list4 .list4_right,
+.container .list_content .list_l ul .list5 .list5_right,
+.container .list_content .list_l ul .list6 .list6_right{
+    width: 87px;
+    height: 71px;
+    background: #4e9ed5;
+    float: left;
+    border-radius:0 10px 10px 0;
+    padding: 30px 15px 30px 20px;
+    border: none;   
+    transform:translateX(225px);
+    transition:1s;
+    position: relative;
+    top:-230px;
+    right: -204px; 
+}
+.container .list_content .list_l ul .list1:hover .list1_right,
+.container .list_content .list_l ul .list2:hover .list2_right,
+.container .list_content .list_l ul .list3:hover .list3_right,
+.container .list_content .list_l ul .list4:hover .list4_right,
+.container .list_content .list_l ul .list5:hover .list5_right,
+.container .list_content .list_l ul .list6:hover .list6_right{
+    transform:translateX(0px);
+}
+
+.container .list_content .list_l ul .list1 .list1_right a,
+.container .list_content .list_l ul .list2 .list2_right a,
+.container .list_content .list_l ul .list3 .list3_right a,
+.container .list_content .list_l ul .list4 .list4_right a,
+.container .list_content .list_l ul .list5 .list5_right a,
+.container .list_content .list_l ul .list6 .list6_right a{
+    display: block;
+    width: 80px;
+    height: 30px;
+    border:1px solid #fff;
+    border-radius: 8px 8px;
+    font-size: 12px;
+    color:#fff;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 5px;    
+}
+.container .list_content .list_l ul .list1 .list1_right a:hover,
+.container .list_content .list_l ul .list2 .list2_right a:hover,
+.container .list_content .list_l ul .list3 .list3_right a:hover,
+.container .list_content .list_l ul .list4 .list4_right a:hover,
+.container .list_content .list_l ul .list5 .list5_right a:hover,
+.container .list_content .list_l ul .list6 .list6_right a:hover{
+    background: #d4af46;
+    border:none;
+}
+/* 第一给a———————————————————— */
+.container .list_content .list_l ul .list1 .list1_right .omg,
+.container .list_content .list_l ul .list2 .list2_right .omg,
+.container .list_content .list_l ul .list3 .list3_right .omg,
+.container .list_content .list_l ul .list4 .list4_right .omg,
+.container .list_content .list_l ul .list5 .list5_right .omg,
+.container .list_content .list_l ul .list6 .list6_right .omg{
+    background: #d4af46;
+    border:none;
+}
+/* 列表中间—————————————————————————— */
+.container .list_c{
+    width: 195px;
+    height: 600px;
+    background: #e8e9e9;
+    float: left;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    overflow: hidden;
+}
+.container .list_c i{
+    display: inline-block;
+    width: 19px;
+    height: 30px;
+    float: left;
+    background: url(../img/xuebi.png) no-repeat -953px -7px;
+    margin:8px 2px 0 10px;
+}
+.container .list_c div{
+    width: 173px;
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    border-left: none;
+}
+.container .list_c .sy{
+    width: 166px;
+    min-height: 436px; 
+    padding:20px 15px 0 15px;
+    background: #f5f5f5;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+    
+}
+.container .list_c .sy span{
+    float: right;
+    line-height: 85px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#656768;
+    
+}
+/* 列表右边———————————————————————————— */
+.container .list_r{
+    width: 205px;
+    height: 600px;
+    background: #f5f5f5;
+    float: left;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.container .list_r i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    background: url(../img/xuebi.png) no-repeat -999px -4px;
+    margin:8px 2px 0 10px;
+}
+.container .list_r div{
+    width: 183px;
+    height: 50px;
+    background: #e8e9e9;
+    padding-left: 20px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+/* 人才招聘—————————————————————— */
+.container .rczp{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.container .rczp h1,
+.container .rczp h2{
+    text-align: center;
+}
+.container .rczp h1{
+    font-weight: bold;
+    color:#13222d;
+    font-size: 50px;
+    margin-top:95px;
+}
+.container .rczp h2{
+    font-size: 12px;
+    color:#a0a6b3;
+    margin-bottom: 50px;
+}
+.container .rczp .rczp_l{
+    width: 600px; 
+    height: 485px;
+    float: left;
+    margin:0 0 0 10px;
+}
+.container .rczp .rczp_l div{
+    width: 565px; 
+    height: 145px;
+    overflow: hidden;
+    padding-right: 35px;
+}
+.container .rczp .rczp_l div i{
+    display: block;
+    width: 105px; height: 105px;
+    border-radius: 50%;
+    float: left;
+    margin: 15px 10px;
+    overflow: hidden;
+}
+.container .rczp .rczp_l .meishu i{
+    background:#161e24 url(../img/meishu.png) no-repeat 8px;
+    background-size: 85px 85px;
+}
+.container .rczp .rczp_l .u3d i{
+    background:#161e24 url(../img/kaifa.png) no-repeat 8px;
+    background-size: 85px 85px;
+}
+.container .rczp .rczp_l .shichang i{
+    background: #161e24 url(../img/yyl.png) no-repeat 8px;
+    background-size: 85px 85px;
+}
+.container .rczp .rczp_l div h5{
+    /* color:#4e9ed5; */
+    font-size: 14px;
+    margin: 25px 0 20px 0;
+    font-weight: bold;
+}
+/* hover效果———————————————————— */
+.container .rczp .rczp_l div:hover{
+    border:2px solid rgb(192, 185, 185);
+}
+.container .rczp .rczp_l div:hover h5{
+    color:#4e9ed5;
+}
+.container .rczp .rczp_l div p{
+    font-size: 12px;
+    color:rgb(122, 121, 121);
+}
+.container .rczp .rczp_l div p>a{
+    color:#f8de95;
+    text-decoration: underline;
+}
+.container .rczp .rczp_l .meishu:hover i{
+    background:#4e93d5 url(../img/meishu2.png) no-repeat 9px;
+    background-size: 85px 85px;
+}
+.container .rczp .rczp_l .u3d:hover i{
+    background:#4e9ed5 url(../img/kaifa2.png) no-repeat 8px;
+    background-size: 85px 85px;
+}
+.container .rczp .rczp_l .shichang:hover i{
+    background:#4e93d5 url(../img/yyl2.png) no-repeat 8px;
+    background-size: 85px 85px;
+}
+/* 右边—————————————————————————————— */
+.container .rczp .rczp_r{
+    width: 465px; 
+    min-height: 485px;
+    background: #46d46e;
+    float: left;
+    padding-left: 35px;
+    margin-left: 35px;
+}
+/* 页脚—————————————————————————————— */
+.container footer{
+    width: 100%;
+    margin:50px auto 0;
+}
+.container footer .foot{
+    width: 1205px;
+    min-height: 300px;
+    background: #161e24;
+    padding:35px 10px 100px 15px;
+}
+.container footer .foot dl{
+    float: left;
+    margin-right: 120px;
+}
+/* 一个伪选择符/———————————————————————— */
+.container footer .foot dl:nth-of-type(6){
+    margin-right: 0;
+}
+.container footer .foot dt{
+    margin-bottom: 20px;
+    color:#d4af46;
+    border-bottom:  1px solid #d4af46;
+    width: 80px;
+}
+.container footer .foot dd{
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.container footer .foot dd:hover a{
+    text-decoration: underline;
+    color:#d4af46;
+}
+.container footer .bott2{
+    width: 980px;
+    height: 140px;
+    background: #0c1216;
+    padding: 20px 100px 0 140px; 
+    overflow: hidden;
+    margin-top:-15px;
+}
+.container footer .bott2 i{
+    background: url(../img/ywz2_v2.png) no-repeat;
+    background-size: 180px 85px;
+    display: block;
+    width: 180px; height: 85px;
+}
+.container footer .bott2 .bott_logo{
+    float: left;
+}
+.container footer .bott2 .bott_text p{
+    font-size: 12px;
+    color:#666;
+    line-height: 30px;
+}
+.container footer .bott2 .bott_text nav{
+    margin-left: 175px;
+    font-size: 14px;
+}
+.container footer .bott2 .bott_text nav a span{
+    position: relative;
+    bottom: 6px;
+
+}

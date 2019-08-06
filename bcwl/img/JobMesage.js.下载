@@ -1,0 +1,115 @@
+﻿$(document).ready(function () {
+    GetJoblist();
+    GetHelpWantedJob();
+});
+
+//获取消息列表
+function GetJoblist(pageType) {
+    $.getJSON("https://hr.q1.com/job/JobTenListByType?jsoncallback=?",
+                 {
+                     type: pageType,
+                     q: rand(9999)
+                 },
+       			function (json) {
+       			    if (json.e == 1) {
+
+       			        $("#tenjoblist").empty();
+       			        $("#tenjoblist").append(json.m);
+       			    }
+       			});
+}
+
+//获取普通区消息列表
+function GetHelpWantedJob() {
+    $.getJSON("https://hr.q1.com/Job/GetHelpWantedJob?jsoncallback=?",
+                 {
+                     q: rand(9999)
+                 },
+       			function (json) {
+       			    if (json.e == 1) {
+       			        $(".ul-box").empty();
+       			        $(".ul-box").append(json.m);
+       			    }
+       			    //招聘交互
+       			    var aJobLi = $('.job-b li');
+       			    var aJobR = $('.job .job-r');
+       			    aJobLi.mouseover(function () {
+       			        var order = $(this).index();
+       			       // aJobLi.children('.li-pic1').css('background-position', '-110px -75px');
+						aJobLi.children('.li-pic2').css('background-position', '-110px -75px');
+       			        aJobLi.children('.li-pic3').css('background-position', '-220px -75px');
+       			        aJobLi.children('.li-pic4').css('background-position', '-656px -695px');
+						aJobLi.children('.li-pic5').css('background-position', '-656px -695px');
+       			        aJobLi.children('.li-pic6').css('background-position', '-876px -694px');
+       			        switch (order) {
+       			            case 0:
+       			                aJobLi.children('.li-pic1').css('background-position', '-105px -180px')
+       			                break;
+       			            case 1:
+       			                aJobLi.children('.li-pic2').css('background-position', '-105px -180px')
+       			                break;
+       			            case 2:
+       			                aJobLi.children('.li-pic3').css('background-position', '-215px -180px')
+       			                break;
+       			            case 3:
+       			                aJobLi.children('.li-pic4').css('background-position', '-656px -800px');
+       			                break;
+       			            case 4:
+       			                aJobLi.children('.li-pic5').css('background-position', '-762px -800px');
+       			                break;
+       			            case 5:
+       			                aJobLi.children('.li-pic6').css('background-position', '-871px -800px')
+       			                break;
+       			        }
+
+       			      
+       			        aJobLi.removeClass('job-li-active');
+       			        $(this).addClass('job-li-active');
+       			        aJobR.removeClass('job-r-active');
+
+       			        aJobR.eq(order).addClass('job-r-active');
+       			    });
+       			    var now = 0;
+       			    var oUl = $('.ul-box ul');
+       			    var ojobB = $('.job-x-bottom');
+       			    var ojobT = $('.job-x-top');
+       			    //一个LI的高度
+       			    var oLiH = aJobLi.eq(0).outerHeight();
+       			    function moveM() {
+       			        oUl.animate({
+       			            marginTop: -oLiH * now
+       			        });
+       			    }
+       			    ojobT.click(function () {
+       			        if (now == aJobLi.length - 3) {
+       			            now = aJobLi.length - 3;
+       			        } else {
+       			            now++;
+       			            moveM();
+       			        }
+       			        if (now == aJobLi.length - 3) {
+       			            $(this).addClass('job-x-top-max');
+       			        }
+       			        if (now > 0) {
+       			            ojobB.addClass('job-x-top-min');
+       			        }
+       			    });
+       			    ojobB.click(function () {
+       			        if (now > 0) {
+       			            now--;
+       			            moveM();
+       			        }
+       			        if (now == 0) {
+       			            $(this).removeClass('job-x-top-min');
+       			        }
+       			        if (now < aJobLi.length - 3) {
+       			            ojobT.removeClass('job-x-top-max');
+       			        }
+       			    });
+       			});
+}
+//生成随机数
+function rand(num) {
+    if (num == null) num = 9999;
+    return Math.floor(Math.random() * num) + Math.random();
+}

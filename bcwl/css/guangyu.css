@@ -1,0 +1,376 @@
+a {
+    text-decoration: none;
+    color: #656768;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+}
+
+header nav {
+    width: 100%;
+    height: 72px;
+    text-align: left;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+header nav a {
+    overflow: hidden;
+}
+
+header nav .nav1 {
+    display: block;
+    width: 165px;
+    height: 59px;
+    background: url(../img/xuebi.png) no-repeat -427px -16px;
+    margin: 0 40px 0 20px;
+    float: left;
+}
+
+header nav a {
+    display: block;
+    width: 110px;
+    height: 72px;
+    float: left;
+    transition: all 1.5s;
+    text-align: center;
+    line-height: 72px;
+    overflow: hidden;
+    position: relative;
+}
+
+header nav a i {
+    display: block;
+    width: 0px;
+    height: 0px;
+    background: #4e9ed5;
+    transition: all .7s;
+    position: absolute;
+    left: 0px;
+    top: -9px;
+}
+
+header nav a:hover i {
+    width: 100%;
+    height: 2px;
+    top: 0px;
+    color: #4e9ed5;
+}
+
+header nav a:hover {
+    color: #4e9ed5;
+    transition: none;
+}
+
+header nav a i {
+    border-top: 2px solid #4e9ed5;
+}
+
+header nav .nav10 {
+    width: 110px;
+    height: 90px;
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    line-height: 90px;
+    text-align: center;
+    background: #d4af46;
+}
+
+header nav .nav10 p {
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background: #d4af46 url(../img/xuebi.png) no-repeat -892px -11px;
+}
+
+.body {
+    width: 100%;
+}
+
+.body>div {
+    width: 100%;
+    height: 409px;
+    background: url(../img/about-bg.jpg) no-repeat center 0;
+    text-indent: -9999px;
+    
+}
+
+.body>div .menu {
+    position: relative;
+    width: 1200px;
+    height: 200px;
+    font-size: 18px;
+    color: #878a8d;
+    margin: 0 auto;
+    background: none;
+}
+
+.menu ul, .pro-menu ul {
+    /* position: absolute;
+    left: 0;
+    top: -105px; */
+    width: 1190px;
+}
+/* ol, ul {
+    list-style: none;
+} */
+.main .menu li, .pro-menu li {
+    position: relative;
+    float: left;
+    width: 148px;
+    overflow: hidden;
+}
+
+.main .menu li h1, .pro-menu li h1 {
+    margin: 0 0 11px 50px;
+    width: 46px;
+    height: 56px;
+    background: url(https://img1.ssl.q1.com/szgla/img/about-sprite.png?v=1) no-repeat 0 -321px;
+}
+
+
+.main .menu li span, .pro-menu li span {
+    display: block;
+    text-align: center;
+}
+
+
+.main .menu li i, .pro-menu li i {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 14px 80px;
+    border-left: 5px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #14222d;
+}
+
+
+.main .menu li h3, .pro-menu li h3 {
+    text-align: center;
+    font-size: 48px;
+    color: #a4a6a7;
+}
+
+.main .menu .li-active .pic, .pro-menu .li-active .pic {
+    display: block;
+    top: -55px;
+}
+
+
+
+/* 点击下面开始 */
+
+
+.all-content {
+    width: 100%;
+}
+.all-content, .business-main, .news-main, .news-main_ipo, .produce-main {
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.introduce {
+    position: relative;
+    height: 695px;
+    font-size: 12px;
+    color: #656363;
+}
+
+.news-main_ipo .top, .business-main .top, .cultrue .top, .futrue .top, .history .top, .honor .top, .introduce .top, .news-main .top, .plan .top, .produce-main .top, .welfare .top {
+    height: 38px;
+}
+
+.business-main .top h1, .cultrue .top h1, .futrue .top h1, .history .top h1, .honor .top h1, .introduce .top h1, .news-main .top h1, .news-main_ipo .top h1, .plan .top h1, .produce-main .top h1, .welfare .top h1 {
+    margin-top: 4px;
+    padding: 0 6px;
+    border-left: 4px solid #14222d;
+    font-size: 18px;
+    color: #14222d;
+}
+
+.business-main .top .x, .cultrue .top .x, .futrue .top .x, .history .top .x, .honor .top .x, .introduce .top .x, .news-main .top .x, .news-main_ipo .top .x, .plan .top .x, .produce-main .top .x, .welfare .top .x {
+    margin-top: 19px;
+    width: 959px;
+    height: 1px;
+    background-color: #d5d5d7;
+}
+
+
+.business-main .top .t-r, .cultrue .top .t-r, .futrue .top .t-r, .history .top .t-r, .honor .top .t-r, .introduce .top .t-r, .news-main .top .t-r, .news-main_ipo .top .t-r, .plan .top .t-r, .produce-main .top .t-r, .welfare .top .t-r {
+    float: right;
+    line-height: 38px;
+    font-size: 12px;
+    color: #9ea5ab;
+}
+
+
+
+
+
+
+
+
+.introduce .content .girl {
+    width: 170px;
+    height: 170px;
+}
+.introduce .content .girl, .introduce .content .wz, .introduce .content .wz-min {
+    float: left;
+}
+
+
+
+
+.introduce .content .wz {
+    padding: 20px 30px 0 30px;
+    width: 970px;
+    height: 90px;
+    background-color: #4e9dd4;
+    color: #f6f4f4;
+    line-height: 24px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+
+.introduce .content .wz span, .introduce .content .wz-min span {
+    float: left;
+    margin-top: 7px;
+    display: block;
+    font-size: 48px;
+    width: 20px;
+    height: 80px;
+}
+
+.introduce .content .wz-min {
+    width: 70px;
+    height: 60px;
+    color: #4e9dd4;
+    background-color: #e5edf2;
+}
+
+.introduce .content .wz-min span {
+    height: 50px;
+    margin-left: 24px;
+    margin-top: 12px;
+}
+
+.introduce .content .duanluo {
+    width: 820px;
+}
+
+.introduce .content .duanluo p {
+    margin: 29px 0 42px 0;
+    font-family: '宋体','\5B8B\4F53';
+    line-height: 25px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.duanluo img {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 页脚—————————————————————————————— */
+
+footer {
+    width: 100%;
+    margin: 50px auto 0;
+}
+
+footer .foot {
+    width: 1205px;
+    min-height: 300px;
+    background: #161e24;
+    padding: 35px 10px 10px 15px;
+}
+
+footer .foot dl {
+    float: left;
+    margin-right: 120px;
+}
+
+/* 一个伪选择符/———————————————————————— */
+
+footer .foot dl:nth-of-type(6) {
+    margin-right: 0;
+}
+
+footer .foot dt {
+    margin-bottom: 20px;
+    color: #d4af46;
+    border-bottom: 1px solid #d4af46;
+    width: 80px;
+}
+
+footer .foot dd {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+footer .foot dd:hover a {
+    text-decoration: underline;
+    color: #d4af46;
+}
+
+footer .bott2 {
+    width: 980px;
+    height: 140px;
+    background: #0c1216;
+    padding: 20px 100px 0 140px;
+    overflow: hidden;
+    margin-top: -15px;
+}
+
+footer .bott2 i {
+    background: url(../img/ywz2_v2.png) no-repeat;
+    background-size: 180px 85px;
+    display: block;
+    width: 180px;
+    height: 85px;
+}
+
+footer .bott2 .bott_logo {
+    float: left;
+}
+
+footer .bott2 .bott_text p {
+    font-size: 12px;
+    color: #a0a6b3;
+    line-height: 30px;
+}
+
+footer .bott2 .bott_text nav {
+    margin-left: 175px;
+    font-size: 14px;
+}
+
+footer .bott2 .bott_text nav a span {
+    position: relative;
+    bottom: 6px;
+}

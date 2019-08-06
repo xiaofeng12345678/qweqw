@@ -1,0 +1,438 @@
+﻿/**
+ * Created by Administrator on 2016/3/23.
+ */
+    //通用函数替换class
+    function attrClass(obj,obj2,style){
+        obj.removeClass(style);
+        obj2.addClass(style);
+}
+
+    var aLi = $('.nav li');
+    var aLiI = $('.nav li .solid');
+    //导航交互 函数封装  触发的对象-触发的方法-对应的对象-设置自身的样式-改变对应对象的样式
+    function navMove(obj,eve,obj2,attr,wid){
+        obj.on(eve,function(){
+            obj2.stop(true,true);
+            var order = $(this).index();
+            if (obj2.eq(order).is('.solid-active')){
+                    return null;
+            }else{
+                $(this).find("li").attr('class',attr);
+                obj2.eq(order).animate(
+                    {
+                        width:wid
+                    }
+                    ,'slow');
+            }
+        })
+    }
+    navMove(aLi,'mouseover',aLiI,'a-active','100%');
+    navMove(aLi,'mouseout',aLiI,'','0');
+
+    //网站地图点击交互
+    var webMap = $('.webmap');
+    var mapContent = $('.map-content');
+    //高度适应屏幕
+    var mHeight = $(window).height() - $('.header').height();
+    $('.map-content-c').css('height',mHeight);
+    webMap.click(function(){
+        if (mapContent.height() == 0){
+            mapContent.animate({height:mHeight},240);
+            $(this).addClass('webmap-click');
+            $(this).children('.icon-reorder').attr('class','icon-remove');
+        }else{
+            moveH();
+        }
+        $('.icon-chevron-up').click(function(){
+            moveH();
+        });
+        function moveH(){
+            mapContent.animate({height:0},240);
+            webMap.removeClass('webmap-click');
+            webMap.children('.icon-remove').attr('class','icon-reorder');
+        }
+   });
+
+    //banner交互
+    var aBanner = $('.banner_list');
+    var bannerIndex = 0;
+    var timer = null;
+    var bannerSize = aBanner.length;
+    var isAllDone = 0;
+
+    aBanner.each(function(){
+        this.isDone = false;
+    });
+
+    $('.ctrl-i').click(function() {
+        clearInterval(timer);
+        var index = $(this).index('.ctrl-i');
+        barnner(index);
+        bannerIndex = index;
+    });
+
+    function barnner(index) {
+        var iCurBanner = aBanner.eq(index);
+        var _bg = iCurBanner.attr('_bg');
+        var oImg = new Image();
+
+        oImg.src = _bg;
+        oImg.onload = function() {
+            if(!iCurBanner[0].isDone) {
+                iCurBanner[0].isDone = true;
+                isAllDone++;
+                if(isAllDone>=bannerSize) {
+                    $('.banner_wrap').removeClass('loading');
+                }
+            }
+            $('.ctrl-i').eq(index).addClass('ctrl-i-active').siblings().removeClass('ctrl-i-active');
+            aBanner.eq(index).css('background', "url(" +this.src+ ") no-repeat 50% 0").addClass('active').siblings('.banner_list').removeClass('active').css('background', '');
+        };
+
+    }
+
+    barnner(bannerIndex);
+
+    function autoPlayBanner() {
+        bannerIndex++;
+        bannerIndex%=bannerSize;
+        barnner(bannerIndex);
+    }
+
+    timer = setInterval(autoPlayBanner, 5e3);
+
+    $('.ctrl')
+    .mouseenter(function() {
+        clearInterval(timer);
+    })
+    .mouseleave(function() {
+        timer = setInterval(autoPlayBanner, 5e3);
+    })
+
+    //视频交互
+    var aVideoI = $('.video-i');
+    var oVideoR = $('.video-r');
+    var oVideoL = $('.video-left');
+    var oVideoRr = $('.video-right');
+    var videoRw = oVideoRr.width();
+    var Vorder = 0;
+    aVideoI.click(function(){
+        Vorder = $(this).index();
+        setVmove();
+    });
+    function setVmove(){
+        attrClass(aVideoI,aVideoI.eq(Vorder),'video-i-active');
+        attrClass(oVideoL,oVideoL.eq(Vorder),'l-active');
+        oVideoR.animate({
+            left:- videoRw * Vorder
+        });
+    }
+
+    var oVideo = $('.alert-video');
+    var aVideo = $('.alert-video .a-video');
+    //关闭打开事件
+    oVideoRr.click(function(){
+        order = $(this).index();
+        attrClass(aVideo,aVideo.eq(order),'v-active');
+        oVideo.css('display','block');
+    });
+    $('.close').click(function(){
+        $(this).parent().parent().css('display','none');
+    });
+
+   //推荐游戏
+    var isHasClassPor = false;
+    $('.tj-box')
+    .mouseenter(function() {
+         if( !$(this).hasClass('active') ) {
+             $(this).addClass('active');
+             isHasClassPor = true;
+         } else {
+             isHasClassPor = false;
+         }
+    })
+    .mouseleave(function() {
+         if( isHasClassPor ) {
+             $(this).removeClass('active')
+         }
+    })
+
+    //端游产品交互
+    var aColumnB = $('.column-l-b li');
+    aColumnB.mouseenter(function(){
+        aColumnB.stop(true,true);
+        var order = $(this).index();
+        $('.none-c').eq(order).css('display','block');
+        $('.none-pic').eq(order).animate({
+            left:0
+        });
+        $('.none-right').eq(order).animate({
+            right:0
+        })
+    });
+    aColumnB.mouseleave(function(){
+        var order = $(this).index();
+        $('.none-pic').eq(order).animate({
+            left:-240
+        });
+        $('.none-right').eq(order).animate({
+            right:-120
+        },function(){
+            $('.none-c').eq(order).css('display','none');
+        });
+    });
+
+    //招聘交互
+    var aJobLi = $('.job-b li');
+    var aJobR = $('.job .job-r');
+    aJobLi.mouseover(function(){
+        var order = $(this).index();
+        if (order == 1){
+            aJobLi.children('.li-pic2').css('background-position','-105px -180px')
+        }else{
+            aJobLi.children('.li-pic2').css('background-position','-110px -75px')
+        }
+        if (order == 2){
+            aJobLi.children('.li-pic3').css('background-position','-215px -180px')
+        }else{
+            aJobLi.children('.li-pic3').css('background-position','-220px -75px')
+        }
+        if (order == 3){
+            aJobLi.children('.li-pic4').css('background-position','-656px -800px')
+        }else{
+            aJobLi.children('.li-pic4').css('background-position','-656px -695px')
+        }
+        if (order == 4){
+            aJobLi.children('.li-pic5').css('background-position','-762px -800px')
+        }else{
+            aJobLi.children('.li-pic5').css('background-position','-766px -695px')
+        }
+        if (order == 5){
+            aJobLi.children('.li-pic6').css('background-position','-871px -800px')
+        }else{
+            aJobLi.children('.li-pic6').css('background-position','-876px -694px')
+        }
+        aJobLi.removeClass('job-li-active');
+        $(this).addClass('job-li-active');
+        aJobR.removeClass('job-r-active');
+        aJobR.eq(order).addClass('job-r-active');
+    });
+    var now = 0;
+    var oUl = $('.ul-box ul');
+    var ojobB = $('.job-x-bottom');
+    var ojobT = $('.job-x-top');
+    //一个LI的高度
+    var oLiH = aJobLi.eq(0).outerHeight();
+    function moveM(){
+        oUl.animate({
+            marginTop: - oLiH * now
+        });
+    }
+    ojobT.click(function(){
+        if (now == aJobLi.length -3){
+            now = aJobLi.length -3;
+        }else{
+            now++;
+            moveM();
+        }
+        if (now == aJobLi.length -3){
+            $(this).addClass('job-x-top-max');
+        }
+        if(now > 0 ){
+            ojobB.addClass('job-x-top-min');
+        }
+    });
+    ojobB.click(function(){
+        if(now > 0){
+            now--;
+            moveM();
+        }
+        if(now == 0){
+            $(this).removeClass('job-x-top-min');
+        }
+        if (now < aJobLi.length -3){
+            ojobT.removeClass('job-x-top-max');
+        }
+    });
+
+    //发展历程奇偶设置Class
+    $('.data:odd').addClass('data-r');
+    $('.data:even').addClass('data-l');
+
+    //发展历程交互
+    var oDataBoxC = $('.data-box-c');
+    var aData = $('.data');
+    var oCtop = $('.c-top');
+    var oCbottom = $('.c-bottom');
+    var fNow = 0;
+    var oDataH = aData.eq(0).outerHeight() * 7;
+
+    //判断奇偶
+    function judgment(){
+        if(aData.length % 7 == 0){
+            return aData.length / 7 -1;
+        }else{
+            return Math.floor(aData.length / 7);
+        }
+    }
+    oCtop.click(function(){
+        if (fNow >= judgment()){
+            fNow = judgment();
+        }else{
+            fNow++;
+            oDataBoxC.animate({
+                marginTop: - oDataH * fNow
+            });
+        }
+        if (fNow == judgment()){
+            oCtop.addClass('c-top-max');
+        }
+        if(fNow > 0 ){
+            oCbottom.removeClass('c-top-max');
+        }
+    });
+    oCbottom.click(function(){
+        if(fNow > 0){
+            fNow--;
+            oDataBoxC.animate({
+                marginTop: - oDataH * fNow
+            });
+        }
+        if(fNow == 0){
+            $(this).addClass('c-top-max');
+        }
+        if(fNow < judgment()){
+            oCtop.removeClass('c-top-max');
+        }
+    });
+
+    //关于我们 和冰川产品的点击切换
+    var aMpic = $('.main .menu .pic');
+    var aMli = $('.main .menu li');
+    var aMbox = $('.main .box');
+
+    var aMpic2 = $('.pro-menu ul .pic');
+    var aMli2 = $('.pro-menu li');
+    var aMbox2 = $('.produce-main .game-box');
+    //通用设置li与对应内容class函数
+    function liAttrClass(index,obj1,obj2,obj3){
+        obj2.css('top','-355px');
+        attrClass(obj1,obj1.eq(index),'li-active');
+        obj2.eq(index).animate({
+            top:-55
+        });
+        attrClass(obj3,obj3.eq(index),'box-active');
+    }
+    function moveOpacity(obj){
+        obj.eq(1).animate({
+            opacity:1
+        },1500);
+    }
+    function moveLeft(obj){
+        obj.eq(2).animate({
+            left:0
+        },600);
+    }
+    function moveTop(obj){
+        obj.eq(5).animate({
+            top:0
+        },600);
+    }
+    function setClass(obj,css){
+        obj.addClass(css);
+    }
+    function doTab(ob1,ob2,ob3){
+    ob1.click(function(){
+        var order = $(this).index();
+        liAttrClass(order,ob1,ob2,ob3);
+        switch (order){
+            case 0:
+                if(ob1 == aMli2){
+                    window.location.hash = '#Game1';
+                }else{
+                    window.location.hash = '#about1';
+                }
+                break;
+            case 1:
+                moveOpacity(ob3);
+                if(ob1 == aMli2){
+                    window.location.hash = '#Game2';
+                }else{
+                    window.location.hash = '#about2';
+                }
+                break;
+            case 2:
+                moveLeft(ob3);
+                if(ob1 == aMli2){
+                    window.location.hash = '#Game3';
+                }else{
+                    window.location.hash = '#about3';
+                }
+                break;
+            case 3:
+                setClass(ob3.eq(3),'cultrue-active');
+                window.location.hash = '#about4';
+                break;
+            case 4:
+                setClass(ob3.eq(4),'welfare-active');
+                window.location.hash = '#about5';
+                break;
+            case 5:
+                moveTop(ob3);
+                window.location.hash = '#about6';
+                break;
+            case 6:
+                setClass(ob3.eq(6),'welfare-active');
+                window.location.hash = '#about7';
+                break;
+        }
+    });
+    //判断hash值给出相应内容
+    if (window.location.hash == '#about1' || window.location.hash == '#Game1'){
+        liAttrClass(0,ob1,ob2,ob3);
+    }
+    if (window.location.hash == '#about2' || window.location.hash == '#Game2'){
+        liAttrClass(1,ob1,ob2,ob3);
+        moveOpacity(ob3);
+    }
+    if (window.location.hash == '#about3' || window.location.hash == '#Game3'){
+        liAttrClass(2,ob1,ob2,ob3);
+        moveLeft(ob3);
+    }
+    if (window.location.hash == '#about4'){
+        lliAttrClass(3,ob1,ob2,ob3);
+        setClass(ob3.eq(3),'cultrue-active');
+    }
+    if (window.location.hash == '#about5'){
+        liAttrClass(4,ob1,ob2,ob3);
+        setClass(ob3.eq(4),'welfare-active');
+    }
+    if (window.location.hash == '#about6'){
+        liAttrClass(5,ob1,ob2,ob3);
+        moveTop(ob3);
+    }
+    if (window.location.hash == '#about7'){
+        liAttrClass(6,ob1,ob2,ob3);
+        setClass(ob3.eq(6),'welfare-active');
+    }
+}
+    doTab(aMli,aMpic,aMbox);
+    doTab(aMli2,aMpic2,aMbox2);
+
+
+//新闻点击之后
+$('.new-main').on('click','#list li a',function(){
+    $(this).find('h3').css('color','#4e9ed5');
+    $(this).find('i').css('background-position','-585px -378px');
+});
+
+if($('#article h1').length > 0){
+    document.title = $('#article h1').html();
+}
+
+//        分享
+var jiathis_config = { data_track_clickback: 'true',
+    pic: "",
+    summary: "",
+    hideMore: false
+};

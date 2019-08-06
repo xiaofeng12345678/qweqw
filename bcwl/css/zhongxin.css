@@ -1,0 +1,333 @@
+a {
+    text-decoration: none;
+    color: #656768;
+}
+
+.container {
+    max-width: 1366px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+}
+
+header nav {
+    width: 100%;
+    height: 72px;
+    text-align: left;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+header nav a {
+    overflow: hidden;
+}
+
+header nav .nav1 {
+    display: block;
+    width: 165px;
+    height: 59px;
+    background: url(../img/xuebi.png) no-repeat -427px -16px;
+    margin: 0 40px 0 20px;
+    float: left;
+}
+
+header nav a {
+    display: block;
+    width: 110px;
+    height: 72px;
+    float: left;
+    transition: all 1.5s;
+    text-align: center;
+    line-height: 72px;
+    overflow: hidden;
+    position: relative;
+}
+
+header nav a i {
+    display: block;
+    width: 0px;
+    height: 0px;
+    background: #4e9ed5;
+    transition: all .7s;
+    position: absolute;
+    left: 0px;
+    top: -9px;
+}
+
+header nav a:hover i {
+    width: 100%;
+    height: 2px;
+    top: 0px;
+    color: #4e9ed5;
+}
+
+header nav a:hover {
+    color: #4e9ed5;
+    transition: none;
+}
+
+header nav a i {
+    border-top: 2px solid #4e9ed5;
+}
+
+header nav .nav10 {
+    width: 110px;
+    height: 90px;
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    line-height: 90px;
+    text-align: center;
+    background: #d4af46;
+}
+
+header nav .nav10 p {
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background: #d4af46 url(../img/xuebi.png) no-repeat -892px -11px;
+}
+
+/* TV开始—————————————————————— */
+
+header .tv-1 {
+    width: 1280px;
+    height: 630px;
+    margin: 0;
+    position: relative;
+    /*给儿子元素定位作为参照物*/
+    overflow: hidden;
+}
+
+header .tv-1 ul {
+    width: 2560px;
+    height: 630px;
+    margin: 0;
+    padding-inline-start: 0;
+    list-style-type: none;
+    position: absolute;
+    /*定位*/
+    top: 0px;
+    left: 0px;
+    animation: move 10s infinite;
+}
+
+header .tv-1 ul li {
+    width: 1280px;
+    height: 630px;
+    float: left;
+}
+
+header .tv-1 ul .pic-1 {
+    /* background-image:url("../img/lbt1.jpg"); */
+    background-size: 1280px 630px;
+}
+
+header .tv-1 ul .pic-2 {
+    background-size: 1280px 630px;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -1280px;
+    }
+}
+
+/* TV结束—————————————————————— */
+
+/* 手游开始—————————————————————— */
+
+.shouyou {
+    width: 100%;
+    background: url('../img/background.gif') repeat-x 0 97px;
+}
+
+.shouyou img {
+    display: block;
+    margin: 55px auto 0;
+    z-index: 22;
+}
+
+/* 手游结束—————————————————————— */
+
+/* 手游里的图片开始—————————————————————— */
+
+.shouyou_img {
+    width: 100%;
+    padding: 45px 20px 50px 20px;
+    overflow: hidden;
+}
+
+.shouyou_img .left {
+    width: 602px;
+    float: left;
+}
+
+.shouyou_img .right {
+    width: 602px;
+    float: left;
+    margin-left: -2px;
+}
+
+.shouyou_img .right>div {
+    margin-top: -4px;
+}
+
+.shouyou_img div>div {
+    width: 600px;
+    height: 159px;
+    overflow: hidden;
+    padding-top: 47px;
+    background: #232e44 url('../img/recommend_bor.png') no-repeat center center;
+}
+
+.shouyou_img div>div .left_l {
+    float: left;
+    background: none;
+    width: 191px;
+    height: 118px;
+    position: relative;
+}
+
+.shouyou_img .left_l>img {
+    position: absolute;
+    bottom: 50px;
+    left: 70px;
+}
+
+.shouyou_img div>div .right_r {
+    width: 290px;
+    height: 125px;
+    float: left;
+    background: none;
+    margin-left: 50px;
+    padding: 0;
+    text-align: center;
+}
+
+.shouyou_img div>div .right_r span {
+    background: #656d7c;
+    width: 49px;
+    height: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+
+.shouyou_img div>div .right_r h3 {
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.shouyou_img div>div .right_r p {
+    color: #9b9ea5;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0 12px 0;
+}
+
+.shouyou_img div>div .right_r div {
+    background: none;
+    padding: 0;
+}
+
+.shouyou_img div>div .right_r div .a1 {
+    height: 60px;
+    width: 60px;
+    background: url(../img/xuebi2.png) no-repeat -1033px -327px;
+    float: left;
+    margin-left: 70px;
+    transition: all 1s;
+}
+
+.shouyou_img div>div .right_r div .a1:hover {
+    background: url('../img/xuebi2.png') no-repeat -1033px -376px;
+}
+.shouyou_img div>div .right_r div .a2 {
+    height: 60px;
+    width: 60px;
+    background: url(../img/xuebi2.png) no-repeat -1091px -327px;
+    float: left;
+    margin-left: 10px;
+    transition: all 1s;
+}
+
+.shouyou_img div>div .right_r div .a2:hover {
+    background: url('../img/xuebi2.png') no-repeat -1091px -376px;
+}
+
+/* 手游里的图片结束—————————————————————— */
+
+
+/* 页脚—————————————————————————————— */
+footer{
+    width: 100%;
+    margin:50px auto 0;
+}
+footer .foot{
+    width: 1205px;
+    min-height: 300px;
+    background: #161e24;
+    padding:35px 10px 100px 15px;
+}
+footer .foot dl{
+    float: left;
+    margin-right: 120px;
+}
+/* 一个伪选择符/———————————————————————— */
+footer .foot dl:nth-of-type(6){
+    margin-right: 0;
+}
+footer .foot dt{
+    margin-bottom: 20px;
+    color:#d4af46;
+    border-bottom:  1px solid #d4af46;
+    width: 80px;
+}
+footer .foot dd{
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+footer .foot dd:hover a{
+    text-decoration: underline;
+    color:#d4af46;
+}
+footer .bott2{
+    width: 980px;
+    height: 140px;
+    background: #0c1216;
+    padding: 20px 100px 0 140px; 
+    overflow: hidden;
+    margin-top:-15px;
+}
+footer .bott2 i{
+    background: url(../img/ywz2_v2.png) no-repeat;
+    background-size: 180px 85px;
+    display: block;
+    width: 180px; height: 85px;
+}
+footer .bott2 .bott_logo{
+    float: left;
+}
+footer .bott2 .bott_text p{
+    font-size: 12px;
+    color:#666;
+    line-height: 30px;
+}
+footer .bott2 .bott_text nav{
+    margin-left: 175px;
+    font-size: 14px;
+}
+footer .bott2 .bott_text nav a span{
+    position: relative;
+    bottom: 6px;
+
+}

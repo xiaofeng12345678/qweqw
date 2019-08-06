@@ -1,0 +1,38 @@
+﻿var js01 = document.createElement('script'); js01.type = 'text/javascript'; js01.async = true; js01.src = "https:\/\/w.cnzz.com\/c.php?id=3142654";
+var js02 = document.createElement('script'); js02.type = 'text/javascript'; js02.async = true; js02.src = "https:\/\/w.cnzz.com\/c.php?id=1253608556&l=3";
+var js03 = document.createElement('script'); js03.type = 'text/javascript'; js03.async = true; js03.src = "https:\/\/css.ssl.q1.com\/c\/js\/v.js?v=1";
+
+setTimeout(function(){
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(js01, s);
+    s.parentNode.insertBefore(js02, s);
+    s.parentNode.insertBefore(js03, s);
+},1);
+
+document.writeln("<style>#_embed_v3_dc{ display:none}</style>");
+$(function(){
+    var _D=function (str){var d = str.match(/http(s)?:\/\/([^\/]+)\//i);return d != null ? d[2] : "";};
+    var _c=0;
+    var srcs="";
+    var _Clear=function(){
+        $("iframe,script,img").each(function(){
+            var d=_D(this.src);
+            //if(d && !/.*\.(q1|cnzz|szgla|17173|163|baidu|pcgames|jiathis|qq|sogou)\.com(\.cn)?$/i.test(d))
+            if(d && !/.*\.(q1|zhugeio|cnzz|szgla|17173|163|baidu|pcgames|jiathis|qq|sogou|szg1a|youku)(\.com|\.net)(\.cn)?$/i.test(d))
+            {
+                srcs+=this.src+";";
+                $(this).hide();
+                $(this).remove();
+            }
+        });
+        _c++;
+        if(srcs!="" && typeof(addWebClick)=="function") {
+            addWebClick('非法注入:'+srcs);
+            //console.log('非法注入:'+srcs);
+            srcs="";
+        }
+        if(_c>5) clearInterval(ii);
+    };
+    setTimeout(_Clear,10);
+    var ii=setInterval(_Clear,1000);
+});
